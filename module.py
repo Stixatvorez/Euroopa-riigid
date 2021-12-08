@@ -20,8 +20,13 @@ def countries(d:dict, v:int):
 def new_key_value(d:dict):
     new={}
     country=(input("Введите страну: ")).capitalize()
-    capital=(input("Введите страну: ")).capitalize()
+    capital=(input("Введите столицу: ")).capitalize()
     new={country:capital}
 
     return d,new
+
+
+
+
+        
 
