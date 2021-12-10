@@ -1,6 +1,5 @@
 from module import*
 from random import*
-from time import*
 Capitals=dict()
 Capitals["Estonia"]="Tallinn"
 Capitals["Albania"]="Tirana"
@@ -22,27 +21,27 @@ Capitals["Austria"]="Vienna"
 Capitals["Switzerland"]="Bern"
 Countries=["Estonia","Albania","Belgium","Czechia","Poland","Portugal","Finland","France","Germany","Sweden","Spain","Serbia","Norway","Moldova","Greece","Bulgaria","Austria","Switzerland"]
 for country in Countries:
-    country=input("Введите страну: ")
+    country=input("Введите страну: Geben Sie Ihr Land ein: ")
     if country in Capitals:
-        print("Столица страны "+country+": " +Capitals[country])
+        print("Столица страны Die Hauptstadt des Landes "+country+": " +Capitals[country])
     else:
-        print("В базе данных нет страны с названием " +country)
-        v=input("Хотите внести " +country+ " в базу данных?Да или Нет? ")
+        print("В базе данных нет страны с названием Es gibt kein Land mit dem Namen in der Datenbank " +country)
+        v=input("Хотите внести Willst du beitragen " +country+ " в базу данных?Да или Нет? zur Datenbank Ja oder Nein? ")
         if v=="Да":
-            ca=input("Введите столицу страны " +country+": ")
+            ca=input("Введите столицу страны Betreten Sie die Hauptstadt des Landes " +country+": ")
             Capitals.update({country: ca})
-            p=input("Возможно в базе данных ошибка, хотите исправить её? Да или Нет? ")
-            if p=="Нет":
+            g=input("Возможно в базе данных ошибка, хотите исправить её? Да или Нет? Vielleicht liegt ein Fehler in der Datenbank vor, möchten Sie ihn beheben? Ja oder Nein? ")
+            if g=="Нет Nein":
                 print("Хорошо")
-            if p=="Да":
-                o=input("Введите правильно страну: ")
-                l=input("Введите правильно столицу: ")
+            if g=="Да ja":
+                o=input("Введите правильно страну: Bitte geben Sie das richtige Land ein: ")
+                l=input("Введите правильно столицу: Geben Sie das richtige Kapital ein: ")
                 Capitals.pop(country)
                 Capitals.update({o: l})
-        if v=="Нет":
-            print("Хорошо")
-    d=input("Хотите ли вы начать проговаривание слов для самостоятельного изучения? Да или Нет? ")
-    if d=="Да":
+        if v=="Нет Nein":
+            print("Хорошо Gut")
+    s=input("Хотите ли вы начать проговаривание слов для самостоятельного изучения? Да или Нет? Möchten Sie mit dem Sprechen von Wörtern zum Selbststudium beginnen? Ja oder Nein? ")
+    if s=="Да ja":
         sonastik={}
         countries=[]
         capitals=[]
@@ -59,43 +58,43 @@ for country in Countries:
         print("Capitals:")
         print(capitals)
         a=input()
-    if d=="Нет":
-        print("Хорошо")
-    p=input("Хотите ли пройти тест на знания столиц Европы? Да или Нет? ")
-    if p=="Да":
+    if s=="Нет Nein":
+        print("Хорошо Gut")
+    p=input("Хотите ли пройти тест на знания столиц Европы? Да или Нет? Möchten Sie den Wissenstest zu den europäischen Hauptstädten machen? Ja oder Nein? ")
+    if g=="Да ja":
         Countries.sort()
         Countries.reverse()
         m=0
         for i in range(10):
             country=str(choice(Countries))
             print(country)
-            st=input("Введите столицу: ")
-            if st==Capitals[country]:
-                print("Правильно!")
-                m+=1
+            zp=input("Введите столицу: Geben Sie die Hauptstadt ein: ")
+            if zp==Capitals[country]:
+                print("Правильно! Richtig!")
+                a+=1
             else:
-                print("Неправильно!")
-        if m==0:
+                print("Неправильно! Nicht richtig!")
+        if a==0:
             print("0%")
-        elif m==1:
+        elif a==1:
             print("10%")
-        elif m==2:
+        elif a==2:
             print("20%")
-        elif m==3:
+        elif a==3:
             print("30%")
-        elif m==4:
+        elif a==4:
             print("40%")
-        elif m==5:
+        elif a==5:
             print("50%")
-        elif m==6:
+        elif a==6:
             print("60%")
-        elif m==7:
+        elif a==7:
             print("70%")
-        elif m==8:
+        elif a==8:
             print("80%")
-        elif m==9:
+        elif a==9:
             print("90%")
-        elif m==10:
+        elif a==10:
             print("100%")
-    if p=="Нет":
-        print("Всего доброго!")
+    if g=="Нет Nein":
+        print("Всего доброго! Alles Gute!")
