@@ -1,16 +1,101 @@
 from module import*
-count_dict={"Österreich": "Wien", "Belgien": "Brüssel", "Vereinigtes Königreich": "London", "Deutschland": "Berliin", "Irland": "Dublin", "Liechtenstein": "Vaduz", "Niederlande": "Amsterdam", 
-           "Frankreich": "Paris", "Weißrussland": "Minsk", "Bulgarien": "Sofia", "Polen": "Warschau", "Tschechien": "Prag", "Albanien": "Tirana", "Bosnien und Herzegowina": "Sarajevo",
-           "Nordmazedonien": "Skopje", "Serbien": "Belgrad"}
-print(count_dict )
-while True:
-    print("Hallo! Gehen wir durch die Länder und ihre Hauptstädte!Привет! Поехали по странам и их столицам!")
-    print("1 - Finden Sie die Hauptstadt des Landes heraus oder umgekehrt Узнай столицу страны или наоборот,\n2 - Neues Land und Hauptstadt hinzufügen Добавить новую страну и столицу,\n3 - Fehler korrigieren исправь ошибки,\n4 - Teste Dein Wissen Проверьте свои знания,\n5 deutsches Lied немецкая песенка")
-    avaleht=input()
-    if avaleht=="1":
-        v=input("Wir werden ein Land nach der Hauptstadt suchen Будем искать страну по столице 1 oder Hauptstadt nach Ländern или столица по стране 2? ")
-    elif avaleht=="2":
-        new_key_value(count_dict)
-    elif avaleht=="5":
-        v=input("\nWas wollen wir trinken, sieben Tage lang,Was wollen wir trinken, so ein Durst,Was wollen wir trinken, sieben Tage lang,Was wollen wir trinken, so ein Durst,Es wird genug für alle sein,Wir trinken zusammen,Roll das Fass mal rein,Wir trinken zusammen, nicht allein,Es wird genug für alle sein,Wir trinken zusammen,Roll das Fass mal rein,Wir trinken zusammen, nicht allein,Dann wollen wir schaffen, sieben Tage lang,Dann wollen wir schaffen, komm fass an,Dann wollen wir schaffen, sieben Tage lang,Dann wollen wir schaffen, komm fass an,Und dass wird keine Plagerei,Wir schaffen zusammen,Sieben Tage lang,Ja schaffen zusammen, nicht allein,Und dass wird keine Plagerei,Wir schaffen zusammen,Sieben Tage lang,Ja schaffen zusammen, nicht allein,Jetzt müssen wir streiten,Keiner weiß wie lang,Ja, für ein Leben ohne Zwang,Jetzt müssen wir streiten,Keiner weiß wie lang,Ja, für ein Leben ohne Zwang,Dann kriegt der Frust uns nicht mehr klein,Wir halten zusammen,Keiner kämpft allein,Wir gehen zusammen, nicht allein,Dann kriegt der Frust uns nicht mehr klein,Wir halten zusammen,Keiner kämpft allein,Wir gehen zusammen, nicht allein,Was wollen wir trinken, sieben Tage lang,Was wollen wir trinken, so ein Durst,Was wollen wir trinken, sieben Tage lang,Was wollen wir trinken, so ein Durst,Es wird genug für alle sein,Wir trinken zusammen,Roll das Fass mal rein,Wir trinken zusammen, nicht allein,Es wird genug für alle sein,Wir trinken zusammen,Roll das Fass mal rein,Wir trinken zusammen, nicht allein")
-
+from random import*
+from time import*
+Capitals=dict()
+Capitals["Estonia"]="Tallinn"
+Capitals["Albania"]="Tirana"
+Capitals["Belgium"]="Brussels"
+Capitals["Czechia"]="Prague"
+Capitals["Poland"]="Warsaw"
+Capitals["Portugal"]="Lisbon"
+Capitals["Finland"]="Helsinki"
+Capitals["France"]="Paris"
+Capitals["Germany"]="Berlin"
+Capitals["Sweden"]="Stockholm"
+Capitals["Spain"]="Madrid"
+Capitals["Serbia"]="Belgrade"
+Capitals["Norway"]="Oslo"
+Capitals["Moldova"]="Chisinau"
+Capitals["Greece"]="Athens"
+Capitals["Bulgaria"]="Sofia"
+Capitals["Austria"]="Vienna"
+Capitals["Switzerland"]="Bern"
+Countries=["Estonia","Albania","Belgium","Czechia","Poland","Portugal","Finland","France","Germany","Sweden","Spain","Serbia","Norway","Moldova","Greece","Bulgaria","Austria","Switzerland"]
+for country in Countries:
+    country=input("Введите страну: ")
+    if country in Capitals:
+        print("Столица страны "+country+": " +Capitals[country])
+    else:
+        print("В базе данных нет страны с названием " +country)
+        v=input("Хотите внести " +country+ " в базу данных?Да или Нет? ")
+        if v=="Да":
+            ca=input("Введите столицу страны " +country+": ")
+            Capitals.update({country: ca})
+            p=input("Возможно в базе данных ошибка, хотите исправить её? Да или Нет? ")
+            if p=="Нет":
+                print("Хорошо")
+            if p=="Да":
+                o=input("Введите правильно страну: ")
+                l=input("Введите правильно столицу: ")
+                Capitals.pop(country)
+                Capitals.update({o: l})
+        if v=="Нет":
+            print("Хорошо")
+    d=input("Хотите ли вы начать проговаривание слов для самостоятельного изучения? Да или Нет? ")
+    if d=="Да":
+        sonastik={}
+        countries=[]
+        capitals=[]
+        file=open("countries-.txt","r")
+        for line in file:
+            k, v=line.strip().split("-")
+            sonastik[k.strip()]=v.strip()
+            countries.append(k)
+            capitals.append(sonastik[k.strip()])
+        file.close()
+        print(sonastik)
+        print("Countries: ")
+        print(countries)
+        print("Capitals:")
+        print(capitals)
+        a=input()
+    if d=="Нет":
+        print("Хорошо")
+    p=input("Хотите ли пройти тест на знания столиц Европы? Да или Нет? ")
+    if p=="Да":
+        Countries.sort()
+        Countries.reverse()
+        m=0
+        for i in range(10):
+            country=str(choice(Countries))
+            print(country)
+            st=input("Введите столицу: ")
+            if st==Capitals[country]:
+                print("Правильно!")
+                m+=1
+            else:
+                print("Неправильно!")
+        if m==0:
+            print("0%")
+        elif m==1:
+            print("10%")
+        elif m==2:
+            print("20%")
+        elif m==3:
+            print("30%")
+        elif m==4:
+            print("40%")
+        elif m==5:
+            print("50%")
+        elif m==6:
+            print("60%")
+        elif m==7:
+            print("70%")
+        elif m==8:
+            print("80%")
+        elif m==9:
+            print("90%")
+        elif m==10:
+            print("100%")
+    if p=="Нет":
+        print("Всего доброго!")
