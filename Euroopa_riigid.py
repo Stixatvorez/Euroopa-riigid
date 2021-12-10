@@ -1,10 +1,10 @@
 from module import*
 from random import*
 ###text to speach
-#from gtts import gTTS
-#import os 
-#s=gTTS(text="Estonia",lang='et',slow=True).save("heli.mp3")
-#os.system("heli.mp3")
+##from gtts import gTTS
+##import os 
+##s=gTTS(text="Estonia",lang='et',slow=True).save("heli.mp3")
+##os.system("heli.mp3")
 ###
 Capitals=dict()
 Capitals["Estonia"]="Tallinn"
