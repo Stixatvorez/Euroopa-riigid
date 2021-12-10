@@ -1,5 +1,11 @@
 from module import*
 from random import*
+###text to speach
+#from gtts import gTTS
+#import os 
+#s=gTTS(text="Estonia",lang='et',slow=True).save("heli.mp3")
+#os.system("heli.mp3")
+###
 Capitals=dict()
 Capitals["Estonia"]="Tallinn"
 Capitals["Albania"]="Tirana"
@@ -33,7 +39,7 @@ for country in Countries:
             g=input("Возможно в базе данных ошибка, хотите исправить её? Да или Нет? Vielleicht liegt ein Fehler in der Datenbank vor, möchten Sie ihn beheben? Ja oder Nein? ")
             if g=="Нет Nein":
                 print("Хорошо")
-            if g=="Да ja":
+            if g=="Да ":
                 o=input("Введите правильно страну: Bitte geben Sie das richtige Land ein: ")
                 l=input("Введите правильно столицу: Geben Sie das richtige Kapital ein: ")
                 Capitals.pop(country)
@@ -41,7 +47,7 @@ for country in Countries:
         if v=="Нет Nein":
             print("Хорошо Gut")
     s=input("Хотите ли вы начать проговаривание слов для самостоятельного изучения? Да или Нет? Möchten Sie mit dem Sprechen von Wörtern zum Selbststudium beginnen? Ja oder Nein? ")
-    if s=="Да ja":
+    if d=="Да ":
         sonastik={}
         countries=[]
         capitals=[]
@@ -58,10 +64,10 @@ for country in Countries:
         print("Capitals:")
         print(capitals)
         a=input()
-    if s=="Нет Nein":
+    if d=="Нет":
         print("Хорошо Gut")
     p=input("Хотите ли пройти тест на знания столиц Европы? Да или Нет? Möchten Sie den Wissenstest zu den europäischen Hauptstädten machen? Ja oder Nein? ")
-    if g=="Да ja":
+    if p=="Да":
         Countries.sort()
         Countries.reverse()
         m=0
@@ -96,5 +102,6 @@ for country in Countries:
             print("90%")
         elif a==10:
             print("100%")
-    if g=="Нет Nein":
+    if p=="Нет ":
         print("Всего доброго! Alles Gute!")
+       
