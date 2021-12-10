@@ -39,15 +39,16 @@ for country in Countries:
             g=input("Возможно в базе данных ошибка, хотите исправить её? Да или Нет? Vielleicht liegt ein Fehler in der Datenbank vor, möchten Sie ihn beheben? Ja oder Nein? ")
             if g=="Нет Nein":
                 print("Хорошо")
-            if g=="Да ":
+            if g=="Да":
                 o=input("Введите правильно страну: Bitte geben Sie das richtige Land ein: ")
                 l=input("Введите правильно столицу: Geben Sie das richtige Kapital ein: ")
                 Capitals.pop(country)
                 Capitals.update({o: l})
-        if v=="Нет Nein":
+
+        if v=="Нет":
             print("Хорошо Gut")
-    s=input("Хотите ли вы начать проговаривание слов для самостоятельного изучения? Да или Нет? Möchten Sie mit dem Sprechen von Wörtern zum Selbststudium beginnen? Ja oder Nein? ")
-    if d=="Да ":
+    a=input("Хотите ли вы начать проговаривание слов для самостоятельного изучения? Да или Нет? Möchten Sie mit dem Sprechen von Wörtern zum Selbststudium beginnen? Ja oder Nein? ")
+    if a=="Да":
         sonastik={}
         countries=[]
         capitals=[]
@@ -64,13 +65,13 @@ for country in Countries:
         print("Capitals:")
         print(capitals)
         a=input()
-    if d=="Нет":
+    if a=="Нет":
         print("Хорошо Gut")
     p=input("Хотите ли пройти тест на знания столиц Европы? Да или Нет? Möchten Sie den Wissenstest zu den europäischen Hauptstädten machen? Ja oder Nein? ")
     if p=="Да":
         Countries.sort()
         Countries.reverse()
-        m=0
+        a=0
         for i in range(10):
             country=str(choice(Countries))
             print(country)
@@ -102,6 +103,6 @@ for country in Countries:
             print("90%")
         elif a==10:
             print("100%")
-    if p=="Нет ":
+    if p=="Нет":
         print("Всего доброго! Alles Gute!")
        
